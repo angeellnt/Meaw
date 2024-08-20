@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/fondos/fondopaisaje.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+h1{
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 320%;
+  font-style: normal;
+  transform: translateY(90%) translateX(9%);
+  color: rgb(216, 104, 104); 
+  position: absolute;
+} 
+.seleccion{
+	display: block;
+  background-image: url("../assets/objetos/flores.png");
+  background-position: center;
+  background-size: cover;
+  height: 470px;
+  width: 800px;
+}
+.seleccion input{ 
+	display: none;
+}
+.seleccion img{
+	width: 200px;
+	height: 200px;
+  position: absolute;
+  left: 54%;
+  top: 37%;
+}
+.kali-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 41%;
+  left: 23.5%;}
+.kali-boton:hover{
+  background-color: #fff;
+  color: #ff5252;
+  border: 4px solid #ff5252;
+}
+.tim-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #EA9C14;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 41%;
+  left: 31%;}
+.tim-boton:hover{
+  background-color: #fff;
+  color: #ff5252;
+  border: 4px solid #ff5252;
+}
+.teo-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #F1C0F9;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 41%;
+  left: 38.45%;}
+.teo-boton:hover{
+  background-color: #fff;
+  color: #ff5252;
+  border: 4px solid #ff5252;
+}
+.cocos-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #7C7B7B;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 41%;
+  left: 45.6%;}
+.cocos-boton:hover{
+  background-color: #fff;
+  color: #ff5252;
+  border: 4px solid #ff5252;
+}
+.salir-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 53%;
+  left: 32%}
+.salir-boton:hover{
+  background-color: #E10C1F;
+  color: #fff;
+  border: 4px solid #000000;
+}
+.aceptar-boton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 4px solid #000;
+  border-radius: 10px;  
+  transition: all 0.3s ease;
+  scale: 0.9;
+  align-content: center;
+  position: absolute;
+  top: 53%;
+  left: 39.5%;}
+.aceptar-boton:hover{
+  background-color: #fff;
+  color: #ff5252;
+  border: 4px solid #ff5252;
+}

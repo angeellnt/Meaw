@@ -1,0 +1,27 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title> Meaw </title>
+    <link rel="stylesheet" type="text/css" href="game.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+</head>
+<body>
+ <div class="seleccion" id="seleccionid">
+ <br>
+    <h1> Selecciona tu personaje </h1>
+
+    <button class="kali-boton" onclick="kaligato();"> Kali </button>
+    <button class="tim-boton" onclick="timgato();"> Tim </button> 
+    <button class="teo-boton" onclick="teogato();"> Teo </button>
+    <button class="cocos-boton" onclick="cocosgato();"> Cocos </button>
+
+    <img src="../assets/gatos/KaliGato.png" id="defecto">
+
+    <a href="../index.html">
+    <button class="salir-boton"> Salir </button></a>
+    <button class="aceptar-boton" onclick="aceptar();"> Aceptar </button>
+ </div>
+    <script src="game.js"></script>
+    <script src="phaser.min.js"></script>
+</body>
+</html>
