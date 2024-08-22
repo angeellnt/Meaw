@@ -1,39 +1,42 @@
-function kaligato(){
-	defecto.src='../assets/gatos/KaliGato.png';
-    personaje='../assets/gatos/KaliSprites.png';
-	var kalimiau = new Audio();
-    kalimiau.src = "../audio/kali1.mp3";
-    kalimiau.play();
+function kaliclick(){
+	defect.src='../assets/characters/KaliHead.png';
+    character='../assets/characters/KaliSprites.png';
+	var kalimeow = new Audio();
+    kalimeow.src = "../audio/kali1.mp3";
+    kalimeow.play();
 }
-function timgato(){
-	defecto.src='../assets/gatos/TimGato.png';
-    personaje='../assets/gatos/TimSprites.png';
-	var timmiau = new Audio();
-    timmiau.src = "../audio/tim1.mp3";
-    timmiau.play();
+function timclick(){
+	defect.src='../assets/characters/TimHead.png';
+    character='../assets/characters/TimSprites.png';
+	var timmeow = new Audio();
+    timmeow.src = "../audio/tim1.mp3";
+    timmeow.play();
 }
-function teogato(){
-	defecto.src='../assets/gatos/TeoGato.png';
-    personaje='../assets/gatos/TeoSprites.png';
-	var teomiau = new Audio();
-    teomiau.src = "../audio/teo1.mp3";
-    teomiau.play();
+function teoclick(){
+	defect.src='../assets/characters/TeoHead.png';
+    character='../assets/characters/TeoSprites.png';
+	var teomeow = new Audio();
+    teomeow.src = "../audio/teo1.mp3";
+    teomeow.play();
 }
-function cocosgato(){
-	defecto.src='../assets/gatos/CocosGato.png';
-    personaje='../assets/gatos/CocosSprites.png';
-	var cocosmiau = new Audio();
-    cocosmiau.src = "../audio/cocos1.mp3";
-    cocosmiau.play();
+function cocosclick(){
+	defect.src='../assets/characters/CocosHead.png';
+    character='../assets/characters/CocosSprites.png';
+	var cocosmeow = new Audio();
+    cocosmeow.src = "../audio/cocos1.mp3";
+    cocosmeow.play();
 }
-personaje='../assets/gatos/KaliSprites.png';
+character='../assets/characters/KaliSprites.png';
 
-function aceptar(){
-	document.getElementById('seleccionid').style.display='none';
+function accept(){
+	document.getElementById('selectionId').style.display='none';
 
-//    var musica = new Audio();
-//    musica.src = "../audio/principal.mp3";
-//    musica.play();
+    var time = 500;
+    var healt = 3;
+    var interval;
+    var music = new Audio();
+    music.src = "../audio/main.mp3";
+    music.play();
 
     var config = {
         type: Phaser.AUTO,
@@ -52,86 +55,109 @@ function aceptar(){
     }
     var game = new Phaser.Game(config);
 
-    function aleatorio(min, max){
+    function random(min, max){
         return Math.floor(Math.random() * (max - min)) + min;
+    }   
+    function recolection(cat, apple){
+        apple.destroy();
     }
-    function recoleccion(gato, manzana){
-        manzana.disableBody(true, true);
+    function applefall(floor, apple){
+        apple.destroy();
+        healt = healt-1;
+
+        if(healt == 0){
+            clearInterval(interval);
+            music.pause();
+        }
     }
     function preload(){
-        this.load.image('fondo', '../assets/fondos/fondogameplay.png');
-        this.load.image('manzana', '../assets/objetos/manzana.png');
-        this.load.image('pasto', '../assets/objetos/pasto.png');
-        this.load.image('piso', '../assets/fondos/piso.png');
-        this.load.spritesheet('gatoskin', personaje, {frameWidth: 120, frameHeight: 100});
+        this.load.image('healt0', '../assets/objects/healt0.png');
+        this.load.image('healt1', '../assets/objects/healt1.png');
+        this.load.image('healt2', '../assets/objects/healt2.png');
+        this.load.image('healt3', '../assets/objects/healt3.png');
+
+        this.load.image('apple', '../assets/objects/apple.png');
+        this.load.image('grass', '../assets/objects/grass.png');
+        
+        this.load.image('floor', '../assets/backgrounds/floor.png');
+        this.load.image('background', '../assets/backgrounds/background2.png');
+
+        this.load.spritesheet('catskin', character, {frameWidth: 120, frameHeight: 100});
     }
     function create(){
-        this.add.image(200, 300, 'fondo');
+        this.add.image(200, 300, 'background');
 
-        gato = this.physics.add.sprite(200, 480, 'gatoskin');
-        gato.body.setGravityY(500);
+        cat = this.physics.add.sprite(200, 480, 'catskin');
+        cat.body.setGravityY(500);
 
-        setInterval(creamanzana, 750);
-        manzanas = this.physics.add.group();
-        this.physics.add.overlap (gato, manzanas, recoleccion, null, true);
-        function creamanzana(){
-        manzanas.create(aleatorio(30, 370), 15, 'manzana').refreshBody}
+        apples = this.physics.add.group();
+        function doapple(){
+            apples.create(random(30, 370), 15, 'apple').refreshBody();
+        }
+        interval = setInterval(doapple, time);
 
-        this.add.image(200, 515, 'pasto');
-        plataforma = this.physics.add.staticGroup();
-        plataforma.create(200, 564, 'piso').refreshBody();
+        this.add.image(200, 515, 'grass');
+        floor = this.physics.add.staticGroup();
+        floor.create(200, 564, 'floor').refreshBody();
 
         this.anims.create({
-            key: 'saltar',
-            frames: [{key: 'gatoskin', frame: 1}],
+            key: 'jump',
+            frames: [{key: 'catskin', frame: 1}],
             frameRate: 20
         });
         this.anims.create({
-            key: 'caminar',
-            frames: this.anims.generateFrameNumbers('gatoskin', { start: 0, end: 3 }),
-            frameRate: 10,
+            key: 'walk',
+            frames: this.anims.generateFrameNumbers('catskin', { start: 0, end: 3 }),
+            frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
-            key: 'sentar',
-            frames: [{key: 'gatoskin', frame: 4}],
+            key: 'idle',
+            frames: [{key: 'catskin', frame: 4}],
             frameRate: 20
         });
 
-        gato.setCollideWorldBounds(true);
-        this.physics.add.collider(gato, plataforma);
+        cat.setCollideWorldBounds(true);
+        this.physics.add.collider(cat, floor);
         cursors = this.input.keyboard.createCursorKeys();
+
+        this.physics.add.overlap (cat, apples, recolection, null, true);
+        this.physics.add.overlap (floor, apples, applefall, null, true);
     }
     function update(){
         if(cursors.left.isDown){
-            gato.flipX = false;
-            gato.setVelocityX(-300);
-            if(gato.body.touching.down){
-                gato.anims.play('caminar', true);
+            cat.flipX = false;
+            cat.setVelocityX(-300);
+            if(cat.body.touching.down){
+                cat.anims.play('walk', true);
                 if(cursors.up.isDown){
-                    gato.setVelocityY(-300);
-                    gato.anims.play('saltar');
+                    cat.setVelocityY(-300);
+                    cat.anims.play('jump');
         }}}
         else if(cursors.right.isDown){
-            gato.flipX = true;
-            gato.setVelocityX(300);
-            if(gato.body.touching.down){
-                gato.anims.play('caminar', true);
+            cat.flipX = true;
+            cat.setVelocityX(300);
+            if(cat.body.touching.down){
+                cat.anims.play('walk', true);
                 if(cursors.up.isDown){
-                    gato.setVelocityY(-300);
-                    gato.anims.play('saltar');
+                    cat.setVelocityY(-300);
+                    cat.anims.play('jump');
         }}}
         else if(cursors.up.isDown){
-            if(gato.body.touching.down){
-                gato.setVelocityY(-300);
-                gato.setVelocityX(0);
-                gato.anims.play('saltar');
+            if(cat.body.touching.down){
+                cat.setVelocityY(-300);
+                cat.setVelocityX(0);
+                cat.anims.play('jump');
         }}
         else{
-            if(gato.body.touching.down){
-                gato.anims.play('sentar');
-                gato.setVelocityX(0);
+            if(cat.body.touching.down){
+                cat.anims.play('idle');
+                cat.setVelocityX(0);
         }}
+
+        if(healt == 0){
+            this.physics.pause();
+        }
     }
 }
 

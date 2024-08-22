@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 body{
-  background-image: url('../assets/fondos/fondoinicio.png');
+  background-image: url('../assets/backgrounds/main.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +16,7 @@ h1{
   transform: translateX(-50%) translateY(-50%);
   color: rgb(216, 104, 104); 
 } 
-.jugar-boton{
+.play-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -34,7 +34,7 @@ h1{
   left: 50%;
   top: 78%;
   transform: translateX(-50%) translateY(-50%);}
-.jugar-boton:hover{
+.play-button:hover{
   background-color: #fff;
   color: #ff5252;
 border: 4px solid #ff5252;

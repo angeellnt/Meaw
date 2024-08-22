@@ -3,7 +3,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../assets/fondos/fondopaisaje.png");
+  background-image: url("../assets/backgrounds/background1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,25 +17,22 @@ h1{
   color: rgb(216, 104, 104); 
   position: absolute;
 } 
-.seleccion{
+.selection{
 	display: block;
-  background-image: url("../assets/objetos/flores.png");
+  background-image: url("../assets/objects/backflowers.png");
   background-position: center;
   background-size: cover;
   height: 470px;
   width: 800px;
 }
-.seleccion input{ 
-	display: none;
-}
-.seleccion img{
+.selection img{
 	width: 200px;
 	height: 200px;
   position: absolute;
   left: 54%;
   top: 37%;
 }
-.kali-boton{
+.kali-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -52,12 +49,12 @@ h1{
   position: absolute;
   top: 41%;
   left: 23.5%;}
-.kali-boton:hover{
+.kali-button:hover{
   background-color: #fff;
   color: #ff5252;
   border: 4px solid #ff5252;
 }
-.tim-boton{
+.tim-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -74,12 +71,12 @@ h1{
   position: absolute;
   top: 41%;
   left: 31%;}
-.tim-boton:hover{
+.tim-button:hover{
   background-color: #fff;
   color: #ff5252;
   border: 4px solid #ff5252;
 }
-.teo-boton{
+.teo-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -96,12 +93,12 @@ h1{
   position: absolute;
   top: 41%;
   left: 38.45%;}
-.teo-boton:hover{
+.teo-button:hover{
   background-color: #fff;
   color: #ff5252;
   border: 4px solid #ff5252;
 }
-.cocos-boton{
+.cocos-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -118,12 +115,12 @@ h1{
   position: absolute;
   top: 41%;
   left: 45.6%;}
-.cocos-boton:hover{
+.cocos-button:hover{
   background-color: #fff;
   color: #ff5252;
   border: 4px solid #ff5252;
 }
-.salir-boton{
+.exit-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -140,12 +137,12 @@ h1{
   position: absolute;
   top: 53%;
   left: 32%}
-.salir-boton:hover{
+.exit-button:hover{
   background-color: #E10C1F;
   color: #fff;
   border: 4px solid #000000;
 }
-.aceptar-boton{
+.accept-button{
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -162,7 +159,7 @@ h1{
   position: absolute;
   top: 53%;
   left: 39.5%;}
-.aceptar-boton:hover{
+.accept-button:hover{
   background-color: #fff;
   color: #ff5252;
   border: 4px solid #ff5252;
