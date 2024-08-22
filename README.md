@@ -2,6 +2,6 @@
 
 this is a beginner simple game with js
 
-The game is incomplete, the apple system not works, the cat only walks from left to right and jump.
+The game is incomplete, the apple system does not works, the cat only walks from left to right and jumps.
 
 I accept suggestions for all
